@@ -1,10 +1,14 @@
 <?php
 
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\AuthController;
+use App\Http\Controllers\PohonController;
 use Illuminate\Support\Facades\Route;
 
+require __DIR__ . '/auth.php';
+
 Route::get('/', function () {
-    return view('welcome');
+    return view('Home');
 });
 
 Route::get('/dashboard', function () {
@@ -15,12 +19,11 @@ Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+
+    // Pohon CRUD routes
+    Route::resource('pohon', PohonController::class);
 });
 
-
-Route::get('/', function () {
-    return view('Home');
-});
 Route::get('/Lokasi', function () {
     return view('Lokasi');
 });
@@ -36,11 +39,13 @@ Route::get('/FAQ', function () {
 Route::get('/Profile', function () {
     return view('Profile');
 });
+
 Route::get('/login', function () {
     return view('login');
-});
+})->name('login');
+
+Route::post('/login', [AuthController::class, 'login'])->name('login.submit');
 
 Route::get('/register', function () {
     return view('register');
-});
-require __DIR__.'/auth.php';
+})->name('register');
