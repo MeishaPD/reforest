@@ -1,3 +1,49 @@
+<h1 align="center">READ THE INSTRUCTION BELOW BEFORE CLONING</h1>
+
+## Cloning
+To clone this repository, click on "<> Code" button at top-right corner of this repository. Use your desired way to clone (you can use URL, github CLI, or downlaod as .zip).
+Here is the example:
+```bash
+   git clone https://github.com/MeishaPD/reforest.git
+   ```
+## Create and Configure the `.env` File
+Copy `.env.example` to create a new `.env` file and update it with your local database settings.
+
+## Install PHP dependecies
+Navigate to your Project Directory, open your command line, and run the code below.
+```bash
+   composer install
+   ```
+
+## Install JS dependencies
+```bash
+   npm install
+   ```
+
+## Run the Database Migration
+```bash
+   php artisan migrate
+   ```
+
+## Seed the Database with Dummy Data (optional)
+```bash
+   php artisan db:seed
+   ```
+
+## Generate Application Key (if needed)
+```bash
+   php artisan key:generate
+   ```
+
+## Run Vite for Front-end and Laravel for Back-end
+```bash
+   vite
+   ```
+and
+```bash
+   php artisan serve
+   ```
+
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
 
 <p align="center">
