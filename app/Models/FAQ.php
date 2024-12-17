@@ -5,10 +5,11 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class FAQ extends Model
+class Faq extends Model
 {
     use HasFactory;
 
     protected $table = 'faq';
-    protected $fillable = ['question', 'answer', 'created_at'];
+    protected $primaryKey = 'id_faq';
+    protected $fillable = ['question', 'answer'];
 }

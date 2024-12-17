@@ -1,7 +1,9 @@
 <?php
 
+use App\Http\Controllers\ArtikelController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\FAQController;
 use App\Http\Controllers\PohonController;
 use Illuminate\Support\Facades\Route;
 
@@ -11,9 +13,11 @@ Route::get('/', function () {
     return view('Home');
 })->name('home');
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
+Route::middleware(['auth', 'verified'])->group(function () {
+    Route::get('/dashboard', function () {
+        return view('dashboard');
+    })->name('dashboard');
+});
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
@@ -30,12 +34,6 @@ Route::get('/Lokasi', function () {
 });
 Route::get('/Pohonku', function () {
     return view('Pohonku');
-});
-Route::get('/Artikel', function () {
-    return view('Artikel');
-});
-Route::get('/FAQ', function () {
-    return view('FAQ');
 });
 Route::get('/Profile', function () {
     return view('Profile');
@@ -54,3 +52,6 @@ Route::get('/register', function () {
 
 // Handle registration form submission
 Route::post('/register', [AuthController::class, 'register'])->name('register.submit');
+
+Route::resource('faq', FaqController::class);
+Route::resource('artikel', ArtikelController::class);
