@@ -10,7 +10,8 @@ class Pohon extends Model
     use HasFactory;
 
     protected $table = 'pohonku';
-    protected $fillable = ['nama_pohon', 'jenis_pohon', 'tanggal_tanam', 'Lokasi', 'user_id'];
+    protected $primaryKey = 'id_Pohon';
+    protected $fillable = ['nama_pohon', 'jenis_pohon', 'tanggal_tanam', 'Lokasi', 'user_id', 'image'];
 
     public function user()
     {
