@@ -9,7 +9,7 @@ require __DIR__ . '/auth.php';
 
 Route::get('/', function () {
     return view('Home');
-});
+})->name('home');
 
 Route::get('/dashboard', function () {
     return view('dashboard');
@@ -20,7 +20,8 @@ Route::middleware('auth')->group(function () {
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 
-    // Pohon CRUD routes
+    Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
+
     Route::resource('pohon', PohonController::class);
 });
 
@@ -46,6 +47,10 @@ Route::get('/login', function () {
 
 Route::post('/login', [AuthController::class, 'login'])->name('login.submit');
 
+// Show registration form
 Route::get('/register', function () {
     return view('register');
 })->name('register');
+
+// Handle registration form submission
+Route::post('/register', [AuthController::class, 'register'])->name('register.submit');
