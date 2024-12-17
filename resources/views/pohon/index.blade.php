@@ -19,7 +19,7 @@
                     <td>{{ $item->nama_pohon }}</td>
                     <td>{{ $item->jenis_pohon }}</td>
                     <td>{{ $item->tanggal_tanam }}</td>
-                    <td>{{ $item->Lokasi }}</td>
+                    <td>{{ $item->lokasi }}</td>
                     <td>
                         @if ($item->image)
                             <!-- Display image from storage -->

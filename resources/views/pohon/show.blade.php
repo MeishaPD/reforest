@@ -7,7 +7,7 @@
         <li><strong>Nama Pohon:</strong> {{ $pohon->nama_pohon }}</li>
         <li><strong>Jenis Pohon:</strong> {{ $pohon->jenis_pohon }}</li>
         <li><strong>Tanggal Tanam:</strong> {{ $pohon->tanggal_tanam }}</li>
-        <li><strong>Lokasi:</strong> {{ $pohon->Lokasi }}</li>
+        <li><strong>Lokasi:</strong> {{ $pohon->lokasi }}</li>
         <li><strong>User ID:</strong> {{ $pohon->user_id }}</li>
         @if ($pohon->image)
             <!-- Display image from storage -->

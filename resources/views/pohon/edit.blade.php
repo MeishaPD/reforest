@@ -27,7 +27,7 @@
 
         <div class="form-group">
             <label for="Lokasi">Lokasi</label>
-            <input type="text" name="Lokasi" class="form-control" value="{{ old('Lokasi', $pohon->Lokasi) }}" required>
+            <input type="text" name="Lokasi" class="form-control" value="{{ old('Lokasi', $pohon->lokasi) }}" required>
         </div>
 
         <div class="form-group">
