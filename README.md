@@ -35,6 +35,11 @@ Navigate to your Project Directory, open your command line, and run the code bel
    php artisan key:generate
    ```
 
+## Link The App To Your Storage
+```bash
+   php artisan storage:link
+   ```
+
 ## Run Vite for Front-end and Laravel for Back-end
 ```bash
    vite
